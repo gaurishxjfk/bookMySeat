@@ -333,6 +333,9 @@ body {
 
 
   }
+  .currentDate {
+    border: 0.5px solid #364c70;
+  }
   .modal > p{
     font-size: 12px;
     text-align: center;  
