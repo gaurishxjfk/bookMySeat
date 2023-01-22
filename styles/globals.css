@@ -5,22 +5,412 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.officeLayout {
+  width: 100%;
+  background: rgba(119, 161, 209, 0.35);
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  padding-top: 0em;
+  padding-bottom: 2em;
+}
+
+.DeskLayout {
+  margin-top: 1em;
+  margin-left: 15%;
+  margin-right: 15%;
+  background: #ffffffa2;
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 7px;
+}
+
+.menu {
+  position: absolute;
+  top: 1em;
+  right: -2em;
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  border: none;
+  border-radius: 3px;
+
+  padding: 0.5em;
+  transform: rotate("45");
+  transition: 0.2s all;
+}
+.menuIcon {
+  font-size: 20px;
+  color: #364c70;
+}
+.menu:hover {
+  font-size: 20px;
+}
+
+.desk-section {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+}
+.desk {
+  width: 90%;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  box-shadow: 0 4px 16px 0 rgba(101, 106, 167, 0.37);
+}
+.deskRighs {
+  display: flex;
+  justify-content: end;
+}
+
+.modal {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.35);
+  background-image: linear-gradient(to top, #f4faffa6 0%, #e2f6ff93 100%);
+  box-shadow: 0 8px 32px 0 rgba(9, 20, 172, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  z-index: 99999 ;
+}
+
+.modal > p{
+  font-size: 16px;
+  text-align: center;  
+}
+.deskEl {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deskEl > button {
+  height: 2em;
+  width: 6em;
+  border: none;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.deskText {
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.5em;
+  padding-top: 2em;
+}
+
+.modal-form > input {
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 0.2em;
+  height: 2em;
+  width: 100%;
+}
+.modal-form > button {
+  border: 1px solid white;
+  border-radius: 3px;
+  margin: 0.6em;
+  height: 2em;
+  width: 60%;
+  cursor: pointer;
+}
+
+.calender {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  gap: 0.5em;
+}
+
+.calender > div {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.calender-row {
+  display: flex;
+  align-items: center;
+}
+
+.cal-nav-btn {
+  font-size: 20px;
+  color: #364c70;
+  cursor: pointer;
+}
+.days {
+  cursor: pointer;
+  width: 3.5em;
+  height: 3.5em;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  box-shadow: 0 3px 9px 0 rgba(27, 31, 66, 0.37);
+  border-radius: 100%;
+  text-align: center;
+  color: #364c70;
+  line-height: 1px;
+  border: 1px solid #a9b1be;
+}
+
+.days-date {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.currentDate {
+  border: 1.5px solid #364c70;
+  background-color: aliceblue;
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+
+.loginpage {
+  width: 100%;
+  background: rgb(88, 133, 255);
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  padding: 9em;
+}
+
+.loginform {
+  position: absolute;
+  z-index: 99999;
+  width: 50%;
+  padding: 2em;
+  background: #ffffffe5;
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 225px 220px rgba(58, 58, 58, 0.514);
+  color: #364c70 !important;
+}
+.c-bpexlo {
+  color: #364c70 !important;
+  display: none !important;
+}
+
+.c-cpTgHx {
+  border: none !important;
+  border-radius: 0em !important;
+  border-bottom: 1.8px solid #364c70 !important;
+}
+.c-kdzhTC {
+  border: none !important;
+  border-radius: 3px !important;
+  background: rgb(88, 133, 255) !important;
+  font-weight: 600 !important;
+}
+.c-bRTXzr{
+  font-size: 14px !important;
+  font-weight: 600 !important;  color: #364c70 !important;
+}
+.login-btn {
+  cursor: pointer;
+  height: 2.5em;
+  width: 7em;
+  border: none;
+  border-radius: 3px;
+  background: rgb(88, 133, 255);
+}
+.login-btn > a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.profile-btn {
+  height: 2.5em;
+  width: 15em;
+  border: none;
+  border-radius: 5px;
+  margin: 1em;
+  margin-right: 0em;
+  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+}
+.logout-btn {
+  height: 2.5em;
+  width: 5em;
+  border: none;
+  border-radius: 5px;
+  margin: 1em;
+  margin-left: 0em;
+  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+}
+.navbar {
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(
+    -225deg,
+    #e2ebf0 0%,
+    #cfd9df 48%,
+    #e2ebf0 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.email-warning{
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid rgb(88, 133, 255);
+  background-color: rgba(163, 187, 255, 0.288);
+  color: rgb(88, 133, 255);
+  padding-top: .6em;
+  padding-bottom: .6em;
+
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 33.75em) {
+  /* 540px */
+  .calender {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    gap: 0.5em;
   }
-  body {
-    color: white;
-    background: black;
+
+  .days {
+    width: 2.7em;
+    height: 2.7em;
+    line-height: 0px;
+    padding-top: 0;
+  }
+  .modal {
+ 
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+
+  }
+  .modal > p{
+    font-size: 12px;
+    text-align: center;  
+  }
+  .cal-nav-btn {
+    font-size: 14px;
+  }
+  .days-date {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .days-day {
+    font-size: 14px;
+  }
+  .loginform {
+    text-align: center;
+    width: 85%;
+
+  }
+  .email-warning{
+    font-size: 12px;
+    padding-top: .3em;
+    padding-bottom: .3em;
+  }
+
+  .DeskLayout {
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid rgb(163, 187, 255);
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+/* 
+background: #ff00cc; 
+background: -webkit-linear-gradient(to right, #333399, #ff00cc); 
+background: linear-gradient(to right, #333399, #ff00cc); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
